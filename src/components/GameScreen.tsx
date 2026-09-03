@@ -8,11 +8,13 @@ export default function GameScreen() {
   return (
     <div className="w-full max-w-md">
       <header className="mb-6 text-center">
-        <h1 className="text-4xl font-black tracking-tight text-white drop-shadow-sm sm:text-5xl">
-          Tic<span className="text-fuchsia-300">·</span>Tac
-          <span className="text-cyan-300">·</span>Toe
+        <h1 className="text-4xl font-black tracking-tight text-stone-800 sm:text-5xl dark:text-stone-100">
+          Tic<span className="text-fuchsia-600 dark:text-fuchsia-400">·</span>Tac
+          <span className="text-cyan-600 dark:text-cyan-400">·</span>Toe
         </h1>
-        <p className="mt-2 text-sm font-medium text-white/70">You are X — beat the computer!</p>
+        <p className="mt-2 text-sm font-medium text-stone-500 dark:text-stone-400">
+          You are X — beat the computer!
+        </p>
       </header>
 
       <StatusBanner status={status} isThinking={isThinking} human={human} />
@@ -28,8 +30,8 @@ export default function GameScreen() {
         onClick={reset}
         className={`mt-6 w-full rounded-2xl px-6 py-3 text-base font-extrabold shadow-lg transition active:scale-[0.98] ${
           isOver
-            ? 'bg-white text-violet-700 hover:bg-white/90'
-            : 'border border-white/30 bg-white/15 text-white hover:bg-white/25'
+            ? 'bg-stone-800 text-amber-50 hover:bg-stone-700 dark:bg-amber-100 dark:text-stone-900 dark:hover:bg-white'
+            : 'border border-stone-300 bg-white/70 text-stone-700 hover:bg-white dark:border-stone-700 dark:bg-stone-800/70 dark:text-stone-200 dark:hover:bg-stone-800'
         }`}
       >
         {isOver ? 'Play again' : 'Restart'}

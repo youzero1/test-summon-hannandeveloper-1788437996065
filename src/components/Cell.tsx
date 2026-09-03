@@ -12,22 +12,16 @@ export default function Cell({ value, index, isWinning, disabled, onSelect }: Ce
   const playable = !disabled && value === null;
 
   const base =
-    'group relative flex aspect-square items-center justify-center rounded-2xl border transition-all duration-150 outline-none focus-visible:ring-4 focus-visible:ring-white/70';
+    'group relative flex aspect-square items-center justify-center rounded-2xl border transition-all duration-150 outline-none focus-visible:ring-4 focus-visible:ring-amber-400/60';
 
   const surface = isWinning
-    ? 'border-white/80 bg-white/45 shadow-[0_0_28px_rgba(255,255,255,0.65)] animate-pulse'
+    ? 'border-amber-400 bg-amber-100 shadow-[0_0_24px_rgba(251,191,36,0.45)] animate-pulse dark:border-amber-500/70 dark:bg-amber-500/20'
     : playable
-      ? 'border-white/25 bg-white/15 hover:-translate-y-0.5 hover:bg-white/30 active:translate-y-0 active:scale-95 cursor-pointer'
-      : 'border-white/20 bg-white/10 cursor-default';
+      ? 'border-stone-200 bg-amber-50 hover:-translate-y-0.5 hover:bg-amber-100 active:translate-y-0 active:scale-95 cursor-pointer dark:border-stone-700 dark:bg-stone-900/60 dark:hover:bg-stone-700/60'
+      : 'border-stone-200 bg-stone-100/70 cursor-default dark:border-stone-700 dark:bg-stone-900/40';
 
   const markColor =
-    value === 'X'
-      ? isWinning
-        ? 'text-cyan-700'
-        : 'text-cyan-200'
-      : isWinning
-        ? 'text-fuchsia-700'
-        : 'text-fuchsia-200';
+    value === 'X' ? 'text-cyan-700 dark:text-cyan-300' : 'text-fuchsia-700 dark:text-fuchsia-300';
 
   const label =
     value === null
@@ -46,7 +40,7 @@ export default function Cell({ value, index, isWinning, disabled, onSelect }: Ce
       {value && (
         <span
           key={value}
-          className={`select-none text-5xl font-black drop-shadow-md transition-transform duration-200 sm:text-6xl ${markColor}`}
+          className={`select-none text-5xl font-black transition-transform duration-200 sm:text-6xl ${markColor}`}
           style={{ animation: 'popIn 220ms cubic-bezier(0.34, 1.56, 0.64, 1)' }}
         >
           {value}

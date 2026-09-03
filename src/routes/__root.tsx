@@ -9,9 +9,9 @@ export const Route = createRootRoute({
 // <Outlet /> is where the matched page renders.
 function RootLayout() {
   return (
-    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-600 via-violet-600 to-fuchsia-600 px-4 py-8">
-      <div className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-cyan-400/30 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-24 -right-16 h-80 w-80 rounded-full bg-amber-300/25 blur-3xl" />
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-amber-50 px-4 py-8 text-stone-800 dark:bg-stone-900 dark:text-stone-100">
+      <div className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-amber-200/50 blur-3xl dark:bg-amber-500/10" />
+      <div className="pointer-events-none absolute -bottom-24 -right-16 h-80 w-80 rounded-full bg-orange-200/40 blur-3xl dark:bg-orange-500/10" />
       <main className="relative z-10 w-full flex justify-center">
         <Outlet />
       </main>

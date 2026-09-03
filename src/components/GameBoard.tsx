@@ -10,7 +10,7 @@ type GameBoardProps = {
 
 export default function GameBoard({ board, winningLine, disabled, onSelect }: GameBoardProps) {
   return (
-    <div className="grid w-full grid-cols-3 gap-3 rounded-3xl border border-white/25 bg-white/10 p-3 shadow-2xl backdrop-blur-sm">
+    <div className="grid w-full grid-cols-3 gap-3 rounded-3xl border border-stone-200 bg-white/70 p-3 shadow-xl backdrop-blur-sm dark:border-stone-700 dark:bg-stone-800/60">
       {board.map((value, index) => (
         <Cell
           key={index}
